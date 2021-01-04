@@ -52,8 +52,8 @@
                 }
             }
             pinExists(pin) {
-                this.accounts = JSON.parse(localStorage.getItem("accounts"));
-                for (let i=1;i<this.accounts.length;i++) {
+                this.accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+                for (let i=0;i<this.accounts.length;i++) {
                     if (Number(pin) === Number(this.accounts[i].pin)) {
                         this.acctIndex = i;
                         return this.accounts[i].balance;
